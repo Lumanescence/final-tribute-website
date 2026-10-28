@@ -11,21 +11,161 @@ body {
 }
 
 #logo {
-    width: 100px;
+    width: 150px;
     height: auto;
 }
 
-table {
-    border: 2px solid black;
-    border-collapse: collapse;
-    margin: 20px;
-    text-align: center;
-    border-radius: 4px;
+/* Home Page */
+
+/* Header */
+.homeHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color);
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
+.homeTitle a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+/* Navigation */
+.homeNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+/* Main Content */
+main {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.homePart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+.partPic {
+    align-content: center;
+    justify-self: center;
+}
+
+.partP {
+    align-content: center;
+    justify-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    color: var(--text-color);
+}
+
+.partP h2 {
     text-align: center;
-    border-radius: 4px;
+    color: var(--text-color);
+}
+
+.partPic img{
+    max-height: 300px;
+    border-radius: 20px;
+}
+
+/* Aside */
+.homeAside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.asideTitle, .asideP {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.asideTitle {
+    background-color: var(--contrast-color);
+    border-radius: 20px;
+}
+
+.asideP {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Footer */
+
+/* Flavors Header */
+.flavorsNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: var(--primary-color);
+}
+
+.flavorsHeader a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+    background-color: var(--primary-color);
+}
+
+.flavorsHeader a img {
+    width: 200px;
+    height: 120px;
+}
+
+.flavorsHeader {
+    margin-bottom: 20px;
+}
+
+/* Flavors Main Content */
+.rankingBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.rankingImg {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.rankingImgBox {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.rankingNum {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
 }
