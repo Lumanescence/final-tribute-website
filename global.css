@@ -23,6 +23,7 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
 .homeTitle a {
@@ -53,7 +54,7 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     align-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .partPic {
@@ -63,7 +64,6 @@ main {
 
 .partP {
     align-content: center;
-    justify-items: center;
     padding-left: 10px;
     padding-right: 10px;
     background-color: var(--secondary-color);
@@ -153,13 +153,14 @@ main {
 
 .rankingImg {
     position: relative;
-    width: 200px;
+    width: 300px;
     height: 200px;
+    border-radius: 20px;
 }
 
 .rankingImgBox {
     position: relative;
-    width: 200px;
+    width: 300px;
     height: 200px;
 }
 
@@ -168,4 +169,14 @@ main {
     inset: 0;
     display: grid;
     place-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.rankingBox div h2,
+.rankingBox div p {
+    justify-content: center;
+    color: var(--text-color);
+    padding-left: 10px;
+    padding-right: 10px;
 }
