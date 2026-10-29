@@ -1,13 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
 :root {
     --primary-color: #EE7724;
     --secondary-color: #43AFC6;
     --contrast-color: #DBBC34;
     --text-color: #2E2D4D;
     --bg-color: #FAF3DD;
+    --title-font: "Wallpoet";
+    --p-font: "Winky Rough";
 }
 
 body {
     background-color: var(--bg-color);
+}
+
+h1, h2, h3, h4, p, button, a {
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--title-font);
+}
+
+p, button, a {
+    font-family: var(--p-font);
+}
+
+button, p, a {
+    font-size: 20px;
 }
 
 #logo {
@@ -82,7 +103,7 @@ main {
 }
 
 /* Aside */
-.homeAside {
+.homeAside, .flavorsAside, .buyAside {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,8 +132,9 @@ main {
 
 /* Footer */
 
+
 /* Flavors Header */
-.flavorsNav {
+.flavorsNav, .buyNav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -122,7 +144,7 @@ main {
     background-color: var(--primary-color);
 }
 
-.flavorsHeader a {
+.flavorsHeader a, .buyHeader a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -130,12 +152,7 @@ main {
     background-color: var(--primary-color);
 }
 
-.flavorsHeader a img {
-    width: 200px;
-    height: 120px;
-}
-
-.flavorsHeader {
+.flavorsHeader, .buyHeader {
     margin-bottom: 20px;
 }
 
@@ -179,4 +196,140 @@ main {
     color: var(--text-color);
     padding-left: 10px;
     padding-right: 10px;
+}
+
+/* Buy Main Content */
+.buyMain {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.buyRamen div img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.buyRamen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--contrast-color);
+    width: 350px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+/* Buttons */
+.homeNav button, .flavorsNav button, .buyNav button {
+    padding: 20px 60px;
+    border-radius: 90px;
+    background-color: var(--secondary-color);
+    border: 4px solid var(--contrast-color);
+}
+
+.homeFooter div button, .flavorsFooter div button, .buyFooter div button {
+    padding: 20px 60px;
+    border-radius: 90px;
+    background-color: var(--primary-color);
+    border: 4px solid var(--contrast-color);
+}
+
+.buyRamen div button {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+/* Footers */
+.homeFooter, .flavorsFooter, .buyFooter {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 10px;
+    justify-items: center;
+}
+
+/* Media Queries */
+.homeBody {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+}
+
+.flavorsBody, .buyBody {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "aside"
+    "footer";
+}
+
+.homeHeader {grid-area: header;}
+.homeAside {grid-area: aside;}
+.homeMain {grid-area: main;}
+.homeFooter {grid-area: footer;}
+
+.flavorsBody nav, .buyBody nav {grid-area: nav;}
+.flavorsBody header, .buyBody header {grid-area: header;}
+.flavorsBody aside, .buyBody aside {grid-area: aside;}
+.flavorsBody main, .buyBody main {grid-area: main;}
+.flavorsBody footer, .buyBody footer {grid-area: footer;}
+
+@media (min-width: 1024px) {
+    .homeBody {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+        gap: 20px;
+    }
+
+    .asideTitle {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .allAside {
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+
+    .flavorsBody, .buyBody {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        "nav nav"
+        "header header"
+        "aside main"
+        "footer footer";
+        gap: 20px;
+    }
+
+    .rankingBox {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-right: 20px;
+    }
+
+    .flavorsMain, .buyMain {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+    }
 }
